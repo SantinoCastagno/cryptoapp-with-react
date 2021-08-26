@@ -1,5 +1,11 @@
-import React from "react";
+import React from 'react'
 
-export const TableCryptos = () => {
-  return <div></div>;
-};
+const TableCryptos = ({cryptos}) => {
+   return (
+      <div>
+         Table Cryptos
+      </div>
+   )
+}
+
+export default TableCryptos
