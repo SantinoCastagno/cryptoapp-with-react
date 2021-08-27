@@ -1,7 +1,6 @@
 import React from "react";
 
 function RowCryptos({ crypto, index }) {
-  console.log(crypto);
   return (
     <tr>
       <td>{index}</td>

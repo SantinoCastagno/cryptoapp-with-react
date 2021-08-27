@@ -3,7 +3,9 @@ import RowCryptos from "./RowCryptos";
 
 const titles = ["#", "Crypto name", "Symbol",  "Price", "Price Change", "24h volume"];
 
-const TableCryptos = ({ cryptos }) => {
+const TableCryptos = ({ cryptos, search }) => {
+
+  const filteredCryptos = cryptos.filter(crypto => crypto.name.toLowerCase().includes(search.toLowerCase()) | crypto.symbol.toLowerCase().includes(search.toLowerCase()));
   return (
     <table className="table table-dark mt-4 table-hover">
       <thead>
@@ -14,7 +16,7 @@ const TableCryptos = ({ cryptos }) => {
         </tr>
       </thead>
       <tbody>
-        {cryptos.map((crypto, index) => (
+        {filteredCryptos.map((crypto, index) => (
           <RowCryptos key={crypto.symbol} crypto={crypto} index={index + 1} />
         ))}
       </tbody>

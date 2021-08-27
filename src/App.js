@@ -11,6 +11,7 @@ function App() {
   };
 
   const [cryptos, setcryptos] = useState([]);
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     fetchData();
@@ -19,10 +20,8 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <header>
-          <h2>Crypto App with React</h2>
-        </header>
-        <TableCryptos cryptos={cryptos} />
+        <input type="text" placeholder="Search a crypto" onChange={e => setSearch(e.target.value)} className="form-control bg-dark text-light border-0 mt-4 text-center" />
+        <TableCryptos cryptos={cryptos} search={search}/>
       </div>
     </div>
   );
