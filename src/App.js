@@ -19,7 +19,9 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <h1>Hello world</h1>
+        <header>
+          <h2>Crypto App with React</h2>
+        </header>
         <TableCryptos cryptos={cryptos} />
       </div>
     </div>
